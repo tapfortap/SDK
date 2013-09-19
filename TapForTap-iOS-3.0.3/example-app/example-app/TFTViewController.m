@@ -8,9 +8,9 @@
 
 #import "TFTViewController.h"
 #import "TFTTapForTap.h"
-#import "GADBannerView.h"
-#import "GADRequest.h"
-#import "GADInterstitial.h"
+//#import "GADBannerView.h"
+//#import "GADRequest.h"
+//#import "GADInterstitial.h"
 
 @implementation TFTViewController
 
@@ -20,13 +20,13 @@
     
     TFTBanner* banner = [TFTBanner bannerWithFrame:CGRectMake(width / 2 - 320 / 2, 0, 320, 50) delegate:self];
     
-    GADBannerView *adMobBanner = [[GADBannerView alloc] initWithAdSize:kGADAdSizeBanner];
-    adMobBanner.frame = CGRectMake(width / 2 - 320 / 2, 55, 320, 50);
-    adMobBanner.adUnitID = @"ca-app-pub-6233315881842046/8855778216";
-    adMobBanner.rootViewController = self;
-    GADRequest *request = [GADRequest request];
-    [adMobBanner loadRequest:request];
-    [self.view addSubview:adMobBanner];
+//    GADBannerView *adMobBanner = [[GADBannerView alloc] initWithAdSize:kGADAdSizeBanner];
+//    adMobBanner.frame = CGRectMake(width / 2 - 320 / 2, 55, 320, 50);
+//    adMobBanner.adUnitID = @"AD_ID";
+//    adMobBanner.rootViewController = self;
+//    GADRequest *request = [GADRequest request];
+//    [adMobBanner loadRequest:request];
+//    [self.view addSubview:adMobBanner];
     
     UIButton* showInterstitialButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     [showInterstitialButton addTarget:self action:@selector(showInterstitial) forControlEvents:UIControlEventTouchUpInside];
@@ -40,17 +40,17 @@
     showAppWallButton.frame = CGRectMake(width / 2 - 200 / 2, 210, 200, 75);
     self.appWall = [TFTAppWall appWallWithDelegate:self];
     
-    UIButton* showAdMobInterstitialButton =[UIButton buttonWithType:UIButtonTypeRoundedRect];
-    [showAdMobInterstitialButton addTarget:self action:@selector(showAdMobInterstitial) forControlEvents:UIControlEventTouchUpInside];
-    [showAdMobInterstitialButton setTitle:@"Show Ad Mob Interstitial" forState:UIControlStateNormal];
-    showAdMobInterstitialButton.frame = CGRectMake(width / 2 - 200 / 2, 310, 200, 75);
-    self.appWall = [TFTAppWall appWallWithDelegate:self];
+//    UIButton* showAdMobInterstitialButton =[UIButton buttonWithType:UIButtonTypeRoundedRect];
+//    [showAdMobInterstitialButton addTarget:self action:@selector(showAdMobInterstitial) forControlEvents:UIControlEventTouchUpInside];
+//    [showAdMobInterstitialButton setTitle:@"Show Ad Mob Interstitial" forState:UIControlStateNormal];
+//    showAdMobInterstitialButton.frame = CGRectMake(width / 2 - 200 / 2, 310, 200, 75);
+//    self.appWall = [TFTAppWall appWallWithDelegate:self];
     
 
     [self.view addSubview:banner];
     [self.view addSubview:showAppWallButton];
     [self.view addSubview:showInterstitialButton];
-    [self.view addSubview:showAdMobInterstitialButton];
+//    [self.view addSubview:showAdMobInterstitialButton];
     [super viewDidLoad];
 }
 
@@ -67,13 +67,13 @@
     [self.appWall showWithViewController:self];
 }
 
-- (void) showAdMobInterstitial {
-    self.adMobInterstitial = [[GADInterstitial alloc] init];
-    self.adMobInterstitial.adUnitID = @"ca-app-pub-6233315881842046/1332511417";
-    self.adMobInterstitial.delegate = self;
-    GADRequest *request = [GADRequest request];
-    [self.adMobInterstitial loadRequest:request];
-}
+//- (void) showAdMobInterstitial {
+//    self.adMobInterstitial = [[GADInterstitial alloc] init];
+//    self.adMobInterstitial.adUnitID = @"ca-app-pub-6233315881842046/1332511417";
+//    self.adMobInterstitial.delegate = self;
+//    GADRequest *request = [GADRequest request];
+//    [self.adMobInterstitial loadRequest:request];
+//}
 
 - (void)tftBannerDidReceive:(TFTBanner *)banner {
     NSLog(@"tftBannerAdDidReceiveAd");
@@ -130,8 +130,8 @@
     NSLog(@"tftAppWallWasDismissed");
 }
 
-- (void)interstitialDidReceiveAd:(GADInterstitial *)ad {
-    [self.adMobInterstitial presentFromRootViewController:self];
-}
+//- (void)interstitialDidReceiveAd:(GADInterstitial *)ad {
+//    [self.adMobInterstitial presentFromRootViewController:self];
+//}
 
 @end
