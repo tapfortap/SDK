@@ -2,4 +2,4 @@
 
 For documentation visit:
 
-https://tapfortap.com/doc/iOSIntegrationGuide
+https://tapfortap.com/doc/ios/integration
