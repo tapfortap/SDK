@@ -2,4 +2,4 @@
 
 For documentation visit:
 
-https://tapfortap.com/doc/AndroidIntegrationGuide
+https://tapfortap.com/doc/android/integration
