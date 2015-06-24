@@ -4,6 +4,7 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
+#import "TFTTypes.h"
 
 @class TFTBanner;
 
@@ -18,6 +19,13 @@
 @property (nonatomic, weak) id<TFTBannerDelegate> delegate;
 @property (nonatomic, assign) BOOL autoRollover;
 @property (nonatomic, assign) BOOL forceLoad;
+
+//Unity Support
+@property (nonatomic, assign) TFTTypeBannerClientRef *bannerClient;
+@property(nonatomic, assign) TFTBannerDidReceiveAdCallback didReceiveAd;
+@property(nonatomic, assign) TFTBannerDidFailCallback didFail;
+@property(nonatomic, assign) TFTBannerWasTappedCallback wasTapped;
+//End Unity Support
 
 + (TFTBanner *)bannerWithFrame:(CGRect)frame delegate:(id<TFTBannerDelegate>)delegate;
 + (TFTBanner *)bannerWithFrame:(CGRect)frame;

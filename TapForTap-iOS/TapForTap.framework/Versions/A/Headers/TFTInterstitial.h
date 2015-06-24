@@ -4,6 +4,7 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
+#import "TFTTypes.h"
 
 @class TFTInterstitial;
 
@@ -52,6 +53,15 @@
 - (BOOL)readyToShow;
 - (void)showWithViewController:(UIViewController *)viewController;
 - (void)showAndLoadWithViewController:(UIViewController *)viewController;
+
+//Unity Support
+@property (nonatomic, assign) TFTTypeInterstitialClientRef *interstitialClient;
+@property (nonatomic, assign) TFTInterstitialDidReceiveCallback didReceiveAd;
+@property (nonatomic, assign) TFTInterstitialDidFailCallback didFail;
+@property (nonatomic, assign) TFTInterstitialDidShowCallback didShow;
+@property (nonatomic, assign) TFTInterstitialWasTappedCallback wasTapped;
+@property (nonatomic, assign) TFTInterstitialWasRewardedCallback wasRewarded;
+//End Unity Support
 
 // Use this for loading screens or waiting periods.  Example: waiting for the first level
 + (TFTInterstitial *)loadBreakInterstitialWithDelegate:(id<TFTInterstitialDelegate>)delegate;
