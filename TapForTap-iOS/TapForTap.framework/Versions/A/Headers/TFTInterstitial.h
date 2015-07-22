@@ -91,7 +91,8 @@
                                          onAdDidFail: (void (^)(TFTInterstitial *interstitial, NSString *reason))failedAdBlock
                                          onAdDidShow: (void (^)(TFTInterstitial *interstitial))shownAdBlock
                                        onAdWasTapped: (void (^)(TFTInterstitial *interstitial))tappedAdBlock
-                                    onAdWasDismissed: (void (^)(TFTInterstitial *interstitial))dismissedAdBlock;
+                                    onAdWasDismissed: (void (^)(TFTInterstitial *interstitial))dismissedAdBlock
+                                     onAdWasRewarded: (void (^)(TFTInterstitial *interstitial))rewardedAdBlock;
 
 // Use these after a goal has been accomplished.  Example: after a level is completed.
 + (TFTInterstitial *)loadAchievementInterstitialWithDescription: (NSString *)description

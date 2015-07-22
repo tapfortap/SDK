@@ -6,7 +6,7 @@ typedef const void* TFTTypeInterstitialRef;
 
 //Banner
 typedef void (*TFTBannerDidReceiveAdCallback)(TFTTypeBannerClientRef bannerClient);
-typedef void (*TFTBannerDidFailCallback)(TFTTypeBannerClientRef bannerClient, const char error);
+typedef void (*TFTBannerDidFailCallback)(TFTTypeBannerClientRef bannerClient, const char *error);
 typedef void (*TFTBannerWasTappedCallback)(TFTTypeBannerClientRef bannerClient);
 
 //Interstitial
