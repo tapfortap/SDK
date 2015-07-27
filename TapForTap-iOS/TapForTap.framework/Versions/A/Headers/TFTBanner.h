@@ -31,8 +31,11 @@
 + (TFTBanner *)bannerWithFrame:(CGRect)frame;
 
 - (id)initWithFrame:(CGRect)frame delegate:(id<TFTBannerDelegate>)delegate;
-- (void)startShowingAds;
-- (void)stopShowingAds;
+- (void) startShowingAds;
+- (void) stopShowingAds;
 - (void) resumeShowingAds;
+- (void) showBanner;
+- (void) hideBanner;
+- (void) showNewAd;
 
 @end
