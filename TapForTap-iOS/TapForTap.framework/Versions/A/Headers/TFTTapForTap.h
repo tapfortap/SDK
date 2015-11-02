@@ -6,7 +6,6 @@
 #import <CoreLocation/CoreLocation.h>
 
 #import "TFTBanner.h"
-#import "TFTAppWall.h"
 #import "TFTInterstitial.h"
 
 @class TFTTapForTap;
@@ -22,6 +21,8 @@ typedef void (^TFTInitializationRequestHandler)(BOOL success, NSDictionary *reas
 @interface TFTTapForTap : NSObject
 + (void)initializeWithAPIKey:(NSString *)apiKey;
 + (void)initializeWithAPIKey:(NSString *)apiKey completion:(TFTInitializationRequestHandler)handler;
++ (void)initializeWithAPIKey:(NSString *)apiKey andPlugins:(Class)plugins, ... NS_REQUIRES_NIL_TERMINATION;
++ (void)initializeWithAPIKey:(NSString *)apiKey andPluginArray:(NSMutableArray *)pluginsArray;
 + (void)setYearOfBirth:(NSUInteger)yearOfBirth;
 + (void)setGender:(TFTGender)gender;
 + (void)setLocation:(CLLocation *)location;
@@ -32,7 +33,11 @@ typedef void (^TFTInitializationRequestHandler)(BOOL success, NSDictionary *reas
 + (void)enableTapForTap;
 + (void)disableTapForTap;
 + (BOOL)enabled;
++ (NSMutableArray *) getPlugins;
++ (NSMutableArray *) getAdProviders;
 + (NSString *)version;
 + (NSString *)apiKey;
++ (NSString *)plugin;
++ (NSString *)pluginVersion;
 
 @end
