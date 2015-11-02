@@ -22,6 +22,7 @@ typedef void (^TFTInitializationRequestHandler)(BOOL success, NSDictionary *reas
 + (void)initializeWithAPIKey:(NSString *)apiKey;
 + (void)initializeWithAPIKey:(NSString *)apiKey completion:(TFTInitializationRequestHandler)handler;
 + (void)initializeWithAPIKey:(NSString *)apiKey andPlugins:(Class)plugins, ... NS_REQUIRES_NIL_TERMINATION;
++ (void)initializeWithAPIKey:(NSString *)apiKey andPluginArray:(NSMutableArray *)pluginsArray;
 + (void)setYearOfBirth:(NSUInteger)yearOfBirth;
 + (void)setGender:(TFTGender)gender;
 + (void)setLocation:(CLLocation *)location;
